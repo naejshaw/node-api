@@ -1,10 +1,5 @@
-export interface PlayerModel{
-    id: number;
-    name: string;
-    team: string;
-    nationality: string;
-    position: string;
-    statistics:{
+export interface StatisticsModel{
+
         Overall: number,
         Pace: number,
         Shooting: number,
@@ -12,5 +7,5 @@ export interface PlayerModel{
         Dribbling: number,
         Defending: number,
         Physical: number
-    };
+
 }
