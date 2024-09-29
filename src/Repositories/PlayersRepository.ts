@@ -308,27 +308,19 @@ const database: PlayerModel[] = [
     },
   ]
 
+// Create
+export const createPlayer = async (player: PlayerModel) => {
+  database.push(player);
+}
+// Read
 export const findAllPlayers = async ():Promise<PlayerModel[]> => {
     return database;
 }
-
+// Read
 export const findPlayerById = async (id: number):Promise<PlayerModel | undefined> => {
     return database.find( player => player.id === id);
 }
-
-export const createPlayer = async (player: PlayerModel) => {
-    database.push(player);
-}
-
-export const deletePlayerById = async (id:number) => {
-    const index = database.findIndex( player => player.id === id);
-    if(index !== -1) {
-        database.splice(index, 1);
-        return true
-    }
-    return false
-}
-
+// Update
 export const findAndModifyPlayer = async (id:number, statistics: StatisticsModel):Promise<PlayerModel> => {
     const playerIndex = database.findIndex(player => player.id === id);
     if(playerIndex !== -1) {
@@ -336,4 +328,13 @@ export const findAndModifyPlayer = async (id:number, statistics: StatisticsModel
     }
 
     return database[playerIndex]
+}
+// Delete
+export const deletePlayerById = async (id:number) => {
+    const index = database.findIndex( player => player.id === id);
+    if(index !== -1) {
+        database.splice(index, 1);
+        return true
+    }
+    return false
 }
