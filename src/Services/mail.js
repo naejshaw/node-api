@@ -15,7 +15,8 @@ var mailOptions = {
   from: 'youremail@gmail.com',
   to: 'myfriend@yahoo.com',
   subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
+  text: 'That was easy!',
+  html: '<h1>Teste</h1>'
 };
 
 // Envio do email
