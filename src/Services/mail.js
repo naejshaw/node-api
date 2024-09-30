@@ -3,16 +3,16 @@ var nodemailer = require('nodemailer');
 
 // Definição do serviço de transmissão
 var transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: process.env.MAIL_SERVICE,
   auth: {
-    user: 'youremail@gmail.com',
-    pass: 'yourpassword'
+    user: process.env.MAIL_EMAIL,
+    pass: process.env.MAIL_PASSWORD
   }
 });
 
 // Configuração do email
 var mailOptions = {
-  from: 'youremail@gmail.com',
+  from: process.env.MAIL_EMAIL,
   to: 'myfriend@yahoo.com',
   subject: 'Sending Email using Node.js',
   text: 'That was easy!',

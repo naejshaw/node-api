@@ -3,17 +3,17 @@ var mysql = require('mysql');
 
 // Criação da conexão
 export var con = mysql.createConnection({
-  host: "localhost",
-  user: "yourusername",
-  password: "yourpassword",
-  database: "mydb"
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DB
 });
 
 // Verificação da conexão e criação de uma tabela
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-  var sql = "CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))";
+  var sql = "CREATE TABLE nome_da_tabela (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))";
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("Table created");
@@ -25,7 +25,7 @@ con.connect(function(err) {
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-  var sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
+  var sql = "INSERT INTO nome_da_tabela (name, address) VALUES ('Company Inc', 'Highway 37')";
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("1 record inserted");
@@ -34,7 +34,7 @@ con.connect(function(err) {
 // Read
 con.connect(function(err) {
   if (err) throw err;
-  con.query("SELECT * FROM customers", function (err, result, fields) {
+  con.query("SELECT * FROM nome_da_tabela", function (err, result, fields) {
     if (err) throw err;
     console.log(result);
   });
@@ -42,7 +42,7 @@ con.connect(function(err) {
 // Update
 con.connect(function(err) {
   if (err) throw err;
-  var sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'";
+  var sql = "UPDATE nome_da_tabela SET address = 'Canyon 123' WHERE address = 'Valley 345'";
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log(result.affectedRows + " record(s) updated");
@@ -51,7 +51,7 @@ con.connect(function(err) {
 // Delete
 con.connect(function(err) {
   if (err) throw err;
-  var sql = "DELETE FROM customers WHERE address = 'Mountain 21'";
+  var sql = "DELETE FROM nome_da_tabela WHERE address = 'Mountain 21'";
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("Number of records deleted: " + result.affectedRows);
@@ -60,7 +60,7 @@ con.connect(function(err) {
 // Drop Table
 con.connect(function(err) {
   if (err) throw err;
-  var sql = "DROP TABLE customers";
+  var sql = "DROP TABLE nome_da_tabela";
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("Table deleted");
@@ -70,7 +70,7 @@ con.connect(function(err) {
 // Where
 con.connect(function(err) {
   if (err) throw err;
-  con.query("SELECT * FROM customers WHERE address = 'Park Lane 38'", function (err, result) {
+  con.query("SELECT * FROM nome_da_tabela WHERE address = 'Park Lane 38'", function (err, result) {
     if (err) throw err;
     console.log(result);
   });
@@ -78,7 +78,7 @@ con.connect(function(err) {
 // Order By
 con.connect(function(err) {
   if (err) throw err;
-  con.query("SELECT * FROM customers ORDER BY name", function (err, result) {
+  con.query("SELECT * FROM nome_da_tabela ORDER BY name", function (err, result) {
     if (err) throw err;
     console.log(result);
   });
@@ -86,7 +86,7 @@ con.connect(function(err) {
 // Limit
 con.connect(function(err) {
   if (err) throw err;
-  var sql = "SELECT * FROM customers LIMIT 5";
+  var sql = "SELECT * FROM nome_da_tabela LIMIT 5";
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log(result);
@@ -95,7 +95,7 @@ con.connect(function(err) {
 // Starting from another position: OFFSET
 con.connect(function(err) {
   if (err) throw err;
-  var sql = "SELECT * FROM customers LIMIT 5 OFFSET 2";
+  var sql = "SELECT * FROM nome_da_tabela LIMIT 5 OFFSET 2";
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log(result);
