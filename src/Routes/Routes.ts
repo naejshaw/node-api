@@ -23,10 +23,10 @@ router.get('/cifraclub/:path', ChordsController.getChordById)
 router.get('/spotify/playlist', PlaylistsController.getAllPlaylists)
 router.get('/spotify/playlist/:id', PlaylistsController.getPlaylistById)
 
-router.get('/chordfy/playlists', ChordfyController.getAllChordlists)
-router.post('/chordfy/playlists', ChordfyController.createChordlist)
-router.get('/chordfy/playlists/:id', ChordfyController.getChordlistById)
-router.patch('/chordfy/playlists/:id', ChordfyController.updateChordlistById)
-router.delete('/chordfy/playlists/:id', ChordfyController.deleteChordlistById)
+router.get('/chordfy/playlists', ChordfyController.getAllChordLists)
+router.post('/chordfy/playlists', ChordfyController.createChordList)
+router.get('/chordfy/playlists/:id', ChordfyController.getChordListById)
+router.patch('/chordfy/playlists/:id', ChordfyController.updateChordListById)
+router.delete('/chordfy/playlists/:id', ChordfyController.deleteChordListById)
 
 export default router
