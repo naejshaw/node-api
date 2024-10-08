@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import * as PlaylistsService from '../Services/PlaylistsService'
 
 export const getAllPlaylists = async (req: Request, res: Response) =>{
-    const httpResponse = await PlaylistsService.getListPlaylistsService()
+    const httpResponse = await PlaylistsService.getAllPlaylistsService()
 
     res.status(httpResponse.statusCode).json(httpResponse.body)
 }

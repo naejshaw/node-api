@@ -18,7 +18,7 @@ router.get('/teams/:id', TeamsController.getTeamById)
 router.post('/teams', TeamsController.createTeam)
 router.delete('/teams/:id', TeamsController.deleteTeamById)
 
-router.get('/cifraclub/:path', ChordsController.getChordById)
+router.get('/cifraclub/:id', ChordsController.getChordById)
 
 router.get('/spotify/playlist', PlaylistsController.getAllPlaylists)
 router.get('/spotify/playlist/:id', PlaylistsController.getPlaylistById)
