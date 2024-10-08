@@ -1,0 +1,53 @@
+[
+    {
+      "id": 1,
+      "name": "Paris Saint-Germain",
+      "gender": "France",
+      "songs": [
+        {
+          "id": 1,
+          "name": "Paris Saint-Germain",
+          "artist": "France"
+        },
+        {
+          "id": 2,
+          "name": "Paris Saint-Germain",
+          "artist": "Germain"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Manchester United",
+      "gender": "England",
+      "songs": [
+        {
+          "id": 1,
+          "name": "Paris Saint-Germain",
+          "artist": "France"
+        },
+        {
+          "id": 2,
+          "name": "Paris Saint-Germain",
+          "artist": "Germain"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Bayern Munich",
+      "gender": "Germain",
+      "songs": [
+        {
+          "id": 1,
+          "name": "Paris Saint-Germain",
+          "artist": "France"
+        },
+        {
+          "id": 2,
+          "name": "Paris Saint-Germain",
+          "artist": "Germain"
+        }
+      ]
+    }
+  ]
